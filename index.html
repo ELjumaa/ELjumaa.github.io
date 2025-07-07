@@ -245,7 +245,25 @@
                 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             }
         }
-        
+
+        body.light-theme .social-card {
+            background: #e3f1fd; /* Light blue background for light mode */
+            color: #005f99;
+            border: 1.5px solid #007acc;
+            box-shadow: 0 2px 12px 0 rgba(0,122,204,0.06);
+            transition: background 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        body.light-theme .social-card:hover {
+            background: #005f99;
+            color: #fff;
+            border-color: #005f99;
+        }
+
+        body.light-theme .social-card:hover i,
+        body.light-theme .social-card:hover span {
+            color: #fff;
+        }
         
         .cta-btn {
             padding: 10px 20px;
@@ -302,6 +320,32 @@
         .cta-btn.outline:hover {
             background: var(--primary-color);
             color: white;
+        }
+
+        body.light-theme {
+            --primary-color: #007acc;
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+        }
+
+        body.light-theme .cta-btn {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        body.light-theme .cta-btn.outline {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        body.light-theme .cta-btn:hover,
+        body.light-theme .cta-btn.outline:hover {
+            background: #005f99;
+            color: #fff;
+            border-color: #005f99;
         }
 
         
@@ -366,6 +410,20 @@
         .skill-card:hover {
             transform: translateY(-5px);
         }
+
+        body.light-theme .skill-card {
+            background: #e3f1fd; /* Light blue background for light mode */
+            color: #005f99;
+            border: 1.5px solid #007acc;
+            box-shadow: 0 2px 12px 0 rgba(0,122,204,0.06);
+            transition: background 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        body.light-theme .skill-card:hover {
+            background: #005f99;
+            color: #fff;
+            border-color: #005f99;
+        }
     </style>
 </head>
 <body>
@@ -374,6 +432,7 @@
             <a href="#" class="logo">Fr1d4y</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <!-- <li><a href="#projects">Projects</a></li> -->
                 <li><a href="#contact">Contact</a></li>
@@ -386,25 +445,62 @@
     </nav>
 
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title animate-slide-up">Web Penetration Tester</h1>
-            <p class="hero-subtitle animate-slide-up">testing the security of websites</p>
-            <div class="cta-container">
-                <a href="#skills" class="cta-btn">My Skills</a>
-                <a href="#contact" class="cta-btn outline">Contact Me</a>
+        <div class="hero-content" style="position: relative; display: flex; align-items: center; gap: 3rem; min-height: 400px;">
+            <div style="flex: 1;">
+                <h1 class="hero-title animate-slide-up">Ahmad Jumaa</h1>
+                <p class="hero-subtitle animate-slide-up">Bug Hunter</p>
+                <div class="cta-container">
+                    <a href="#skills" class="cta-btn">My Skills</a>
+                    <a href="#contact" class="cta-btn outline">Contact Me</a>
+                </div>
             </div>
+            <div style="flex-shrink: 0; position: relative;">
+                <img src="IMG_5926.JPEG"
+                     alt="Eljumaa Photo"
+                     style="width: 320px; height: 320px; object-fit: cover; border-radius: 50%; box-shadow: 0 4px 24px rgba(0,0,0,0.2);">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section" style="padding: 5rem 2rem; background: var(--glass-bg); max-width: 900px; margin: 4rem auto 0 auto; border-radius: 18px; box-shadow: 0 2px 24px 0 rgba(0,122,204,0.08);">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--primary-color); text-align: center;">👋 About Me</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-color); text-align: center;">
+            Hey! I’m Ahmad Adnan Jumaa, but most know me as Ece — a passionate cybersecurity student, CTF challenge creator, and active learner based in Jordan.
+        </p>
+        <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-color);">
+            🎓 I’m currently pursuing my Bachelor’s in Cybersecurity at Jordan University of Science and Technology (JUST), where I also proudly serve as a cybersecurity mentor. Whether I’m diving deep into cryptographic protocols or guiding others through their first Capture The Flag (CTF) challenge, I thrive at the intersection of learning, teaching, and breaking things (ethically, of course!).
+        </p>
+        <div style="margin-bottom: 1.5rem;">
+            <strong style="color: var(--primary-color); font-size: 1.1rem;">🔐 Cybersecurity Experience</strong>
+            <ul style="margin: 1rem 0 1.5rem 1.5rem; color: var(--text-color); font-size: 1.05rem;">
+                <li>💡 <b>CTF Challenge Creator</b> – Founder and organizer of RLCTF, a competitive CTF event designed to challenge and educate participants with real-world inspired scenarios.</li>
+                <li>🧠 <b>CTF Competitor</b> – Actively participate in a wide range of national and international competitions, constantly sharpening my skills in web exploitation, cryptography, binary exploitation, reverse engineering, and more.<br>
+                    <span style="display:block; margin-top:0.5rem;">
+                        <b>Events:</b> MetaCTF, BuckeyeCTF, JUSTCTF, AliensCTF, ZUCTF, DownUnderCTF, HITCON CTF, BlitzCTF, CatTheFlag, ImaginaryCTF, DeadSecCTF, SEKAICTF, PwnSecCTF, GlacierCTF, SECCON CTF, and multiple local events including JUSTLocalCTF.
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <strong style="color: var(--primary-color); font-size: 1.1rem;">🧪 Hands-on experience with:</strong>
+            <ul style="margin: 1rem 0 0 1.5rem; color: var(--text-color); font-size: 1.05rem; columns: 2; max-width: 500px;">
+                <li>Web Exploitation</li>
+                <li>Cryptography</li>
+                <li>Reverse Engineering</li>
+                <li>Binary Exploitation</li>
+                <li>OSINT and Forensics</li>
+            </ul>
         </div>
     </section>
 
     <section id="skills" class="skills-section">
         <h2>Skills</h2>
         <div class="skills-grid">
-            <div class="skill-card">CTF</div>
-            <div class="skill-card">Linux</div>
-            <div class="skill-card">C++</div>
-            <div class="skill-card">Python</div>
-            <div class="skill-card">Bash</div>
-            <div class="skill-card">Web Pentest</div>
+            <div class="skill-card">ecppt</div>
+            <div class="skill-card">Linux+</div>
+            <div class="skill-card">ejpt</div>
+            <div class="skill-card">eWPTX</div>
+            <div class="skill-card">Bug Hunter</div>
         </div>
     </section>
 
